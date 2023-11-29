@@ -1,2 +1,2 @@
 # react-jest
-jest/vitest unit test cases
+jest/vitest unit test cases.
