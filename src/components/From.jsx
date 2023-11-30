@@ -19,8 +19,12 @@ function TextControlsExample() {
       </OverlayTrigger>
     </span>
   );
+  const redirect = (e) => {
+    e.preventDefault();
+    window.location.href=`/userlist`;
+  }
   return (
-    <Form>
+    <Form onSubmit={(e) => redirect(e)}>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Check
           type="checkbox"
@@ -29,7 +33,7 @@ function TextControlsExample() {
           label={cheeckBoxLabel}
         />
       </Form.Group>
-      <Button varient="secondary" type="submit" disabled={!tcChecked}>
+      <Button varient="primary" type="submit" disabled={!tcChecked} >
         Submit
       </Button>
     </Form>
