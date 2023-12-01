@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import User from "./User";
+import UserComponent from "./User";
 
 const userMocData = {
   id: 1,
@@ -8,7 +8,7 @@ const userMocData = {
 };
 
 test("Display the user image and name", () => {
-  render(<User user={userMocData}/>);
+  render(<UserComponent user={userMocData}/>);
   const img = screen.getByRole("img");
   expect(img).toBeInTheDocument();
   const name = screen.queryByText(/name:/i);
