@@ -13,6 +13,7 @@ export default function UserList() {
       setUserData(res.data);
     }
   };
+  // for testing the updated state values directly
   // userData = [{}];
   // console.log(userData);
 
@@ -31,7 +32,7 @@ export default function UserList() {
         {userVote.map(({ name, vote, id }) => (
           <div key={id}>
             <div>
-              {name} {vote} vote{vote > 1 ? "s" : ""}
+              {name} - {vote} vote{vote > 1 ? "s" : ""}
             </div>
           </div>
         ))}
