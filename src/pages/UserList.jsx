@@ -21,22 +21,27 @@ export default function UserList() {
     getData("https://reqres.in/api/users?page=1");
   }, []);
 
+  const renderUser = (data) => {
+    return data.map((user) => {
+      const { id, first_name, avatar } = user;
+      const selectedUser = userVote.find((vote) => vote.id === id);
+      const vote = (selectedUser && selectedUser.vote) || 0;
+      return (
+        <UserComponent
+          key={id}
+          name={first_name}
+          id={id}
+          image={avatar}
+          vote={vote}
+        />
+      );
+    });
+  };
+
   return (
     <>
-      <div style={{ display: "flex" }}>
-        {userData.map((user) => (
-          <UserComponent user={user} key={user.id} />
-        ))}
-      </div>
-      <div style={{ margin: "100px", textAlign: "center" }}>
-        {userVote.map(({ name, vote, id }) => (
-          <div key={id}>
-            <div>
-              {name} - {vote} vote{vote > 1 ? "s" : ""}
-            </div>
-          </div>
-        ))}
-      </div>
+      <div style={{ display: "flex" }}>{renderUser(userData)}</div>
+      <div style={{ margin: "100px", textAlign: "center" }}></div>
     </>
   );
 }
