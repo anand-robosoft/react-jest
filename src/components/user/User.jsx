@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { User } from "../store/UserContext";
+import { User } from "../../store/UserContext";
 
 export default function UserComponent(props) {
   const [, setUserVote] = useContext(User);
@@ -22,7 +22,7 @@ export default function UserComponent(props) {
   };
 
   return (
-    <div role="card" key={id} onClick={onClick}>
+    <div role="card" onClick={onClick}>
       {image && <img src={image} alt={`user ${name}`} />}
       {name && <div role={"name"}>name: {name}</div>}
       <div role={"vote"}>vote: {vote}</div>

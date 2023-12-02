@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import UserComponent from "./User";
-import { Userprovider } from "../store/UserContext";
+import { Userprovider } from "../../store/UserContext";
 
 const userMocData = {
   id: 1,

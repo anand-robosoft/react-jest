@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import UserList from "./UserList";
-import { Userprovider } from "../store/UserContext";
+import { Userprovider } from "../../store/UserContext";
 
 test("Display the user list image and name", async () => {
   render(<UserList />, { wrapper: Userprovider });

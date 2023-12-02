@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
-import { User } from "../store/UserContext";
-import UserComponent from "../components/User";
+import { User } from "../../store/UserContext";
+import UserComponent from "../../components/user/User";
 
 export default function UserList() {
   const [userVote] = useContext(User);
